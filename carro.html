@@ -27,40 +27,44 @@
   <div class="container">
     <main>
       <div class="jumbotron my-2">
-        <h1 class="display-4">WonderWoman</h1>
+        <h1 class="display-4"><a href="index.html">WonderWoman</a></h1>
         <hr class="my-4">
-        <p>Esto es una aplicación web dedicada a la venta de merchandising de WonderWoman.</p>
+        <p class="lead">Mi carrito</p>
       </div>
-      <div class="row mb-2">
+      <div class="row">
         <div class="col-10">
-          <div class="row">
-            <div class="col">
-              <img src="img/figura-accion-ww.jpg" class="imagenWW" alt="Figura de acción WonderWoman;Figura;10">
-            </div>
-            <div class="col">
-              <img src="img/desayuno-ww.jpg" class="imagenWW" alt="Tazón de cereales WonderWoman;Vajilla;5">
-            </div>
-            <div class="col">
-              <img src="img/escudo-ww.jpg" class="imagenWW" alt="Escudo WonderWoman;Juguete;50">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <img src="img/comic-ww.jpg" class="imagenWW" alt="Comic edición PLata WonderWoman;Comic;23">
-            </div>
-            <div class="col">
-              <img src="img/disfraz-ww.jpg" class="imagenWW" alt="Disfraz WonderWoman;Ropa;20">
-            </div>
-            <div class="col">
-              <img src="img/lenceria-ww.jpg" class="imagenWW" alt="Lencería sexy WonderWoman;Ropa;27">
-            </div>
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Categoría</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="prueba">
+                  <td>Lencería WW</td>
+                  <td>Ropa</td>
+                  <td>x50</td>
+                  <td>10€</td>
+                  <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
+                </tr>
+                <tr id="precio-total">
+                  <th scope="row">Total</th>
+                  <td></td>
+                  <td></td>
+                  <td>10€</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div class="col-2">
-          <a href="carro.html" class="btn btn-info btn-lg d-flex justify-content-end">
-            <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
-          </a>
+        <div class="col-2 d-flex justify-content-end">
+          <button type="button" class="btn btn-danger">Eliminar todo</button>
         </div>
       </div>
     </main>
