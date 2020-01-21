@@ -44,5 +44,9 @@ for (let i = 0; i < --arrayImg.length; i++) {
   //Añadimos eventos a las imágenes
   arrayImg[i].addEventListener('click', function(){
     console.log(arrayObjetosImg[i]);
-  })
+    let objeto = {'nombre':arrayObjetosImg[i].getNombre(), 'categoria':arrayObjetosImg[i].getCategoria(), 'cantidad':arrayObjetosImg[i].getCantidad(),'precio':arrayObjetosImg[i].getPrecio(),
+    'ruta':arrayObjetosImg[i].getRuta()};
+
+    localStorage.setItem('testObject', JSON.stringify(objeto));
+  });
 }
