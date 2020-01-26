@@ -40,23 +40,16 @@
                   <th scope="col">Nombre</th>
                   <th scope="col">Categoría</th>
                   <th scope="col">Cantidad</th>
-                  <th scope="col">Precio</th>
+                  <th scope="col">Precio (€)</th>
                   <th scope="col"></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr id="prueba">
-                  <td>Lencería WW</td>
-                  <td>Ropa</td>
-                  <td></td>
-                  <td>10€</td>
-                  <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
-                </tr>
-                <tr id="precio-total">
+              <tbody id="tuplas">
+                <tr>
                   <th scope="row">Total</th>
                   <td></td>
                   <td></td>
-                  <td id="precio-total"></td>
+                  <td id="precio_total"></td>
                   <td></td>
                 </tr>
               </tbody>
@@ -64,7 +57,7 @@
           </div>
         </div>
         <div class="col-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-danger">Eliminar todo</button>
+          <button type="button" class="btn btn-danger mb-4" id="eliminar_todo">Eliminar todo</button>
         </div>
       </div>
     </main>
@@ -114,7 +107,8 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="js/master.js"></script>
+  <script src="js/Articulo.js"></script>
+  <script src="js/carro.js"></script>
   <!-- bootstrap -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
