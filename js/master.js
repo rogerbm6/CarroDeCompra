@@ -13,27 +13,30 @@ for (let i = 0; i < --arrayImg.length; i++) {
 
   //Añadimos eventos a las imágenes
   arrayImg[i].addEventListener('click', function() {
-    let objeto = {
-      'nombre': arrayObjetosImg[i].getNombre(),
-      'categoria': arrayObjetosImg[i].getCategoria(),
-      'cantidad': arrayObjetosImg[i].getCantidad(),
-      'precio': arrayObjetosImg[i].getPrecio(),
-      'ruta': arrayObjetosImg[i].getRuta()
-    };
-
-    if (localStorage.getItem(arrayObjetosImg[i].getNombre())) {
-      let prueba = JSON.parse(localStorage.getItem(arrayObjetosImg[i].getNombre()));
-      let cantidad = prueba.cantidad;
-      let objeto2 = {
+    let men = confirm('¿Quieres añadirlo al carro?');
+    if (men) {
+      let objeto = {
         'nombre': arrayObjetosImg[i].getNombre(),
         'categoria': arrayObjetosImg[i].getCategoria(),
-        'cantidad': ++cantidad,
+        'cantidad': arrayObjetosImg[i].getCantidad(),
         'precio': arrayObjetosImg[i].getPrecio(),
         'ruta': arrayObjetosImg[i].getRuta()
       };
-      localStorage.setItem(prueba.nombre, JSON.stringify(objeto2));
-    } else {
-      localStorage.setItem(arrayObjetosImg[i].getNombre(), JSON.stringify(objeto));
+
+      if (localStorage.getItem(arrayObjetosImg[i].getNombre())) {
+        let prueba = JSON.parse(localStorage.getItem(arrayObjetosImg[i].getNombre()));
+        let cantidad = prueba.cantidad;
+        let objeto2 = {
+          'nombre': arrayObjetosImg[i].getNombre(),
+          'categoria': arrayObjetosImg[i].getCategoria(),
+          'cantidad': ++cantidad,
+          'precio': arrayObjetosImg[i].getPrecio(),
+          'ruta': arrayObjetosImg[i].getRuta()
+        };
+        localStorage.setItem(prueba.nombre, JSON.stringify(objeto2));
+      } else {
+        localStorage.setItem(arrayObjetosImg[i].getNombre(), JSON.stringify(objeto));
+      }
     }
   });
 }
