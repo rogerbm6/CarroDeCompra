@@ -58,10 +58,12 @@ for (let i = 0; i < --arrayImg.length; i++) {
 
     if (localStorage.getItem(arrayObjetosImg[i].getNombre())) {
       let prueba = JSON.parse(localStorage.getItem(arrayObjetosImg[i].getNombre()));
+      let cantidad = prueba.cantidad;
+      console.log(cantidad);
       let objeto2 = {
         'nombre': arrayObjetosImg[i].getNombre(),
         'categoria': arrayObjetosImg[i].getCategoria(),
-        'cantidad': prueba.cantidad++,
+        'cantidad': ++cantidad,
         'precio': arrayObjetosImg[i].getPrecio(),
         'ruta': arrayObjetosImg[i].getRuta()
       };
