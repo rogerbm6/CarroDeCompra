@@ -34,6 +34,10 @@ let arrayImg = document.getElementsByTagName('img');
 //Array con objetos imágenes
 let arrayObjetosImg = [];
 
+let contador = 0;
+
+let precio_total = 0;
+
 //Creación de los objetos articulo
 for (let i = 0; i < --arrayImg.length; i++) {
   let alt = arrayImg[i].alt.split(';'); //array con informamción del producto recuperada del atributo alt
@@ -42,11 +46,29 @@ for (let i = 0; i < --arrayImg.length; i++) {
   arrayObjetosImg.push(new articulo(alt[0], alt[1], 1, alt[2], rutaB));
 
   //Añadimos eventos a las imágenes
-  arrayImg[i].addEventListener('click', function(){
-    console.log(arrayObjetosImg[i]);
-    let objeto = {'nombre':arrayObjetosImg[i].getNombre(), 'categoria':arrayObjetosImg[i].getCategoria(), 'cantidad':arrayObjetosImg[i].getCantidad(),'precio':arrayObjetosImg[i].getPrecio(),
-    'ruta':arrayObjetosImg[i].getRuta()};
+  arrayImg[i].addEventListener('click', function() {
+    //console.log(arrayObjetosImg[i]);
+    let objeto = {
+      'nombre': arrayObjetosImg[i].getNombre(),
+      'categoria': arrayObjetosImg[i].getCategoria(),
+      'cantidad': arrayObjetosImg[i].getCantidad(),
+      'precio': arrayObjetosImg[i].getPrecio(),
+      'ruta': arrayObjetosImg[i].getRuta()
+    };
 
-    localStorage.setItem('testObject', JSON.stringify(objeto));
+    if (localStorage.getItem(arrayObjetosImg[i].getNombre())) {
+      let prueba = JSON.parse(localStorage.getItem(arrayObjetosImg[i].getNombre()));
+      let objeto2 = {
+        'nombre': arrayObjetosImg[i].getNombre(),
+        'categoria': arrayObjetosImg[i].getCategoria(),
+        'cantidad': prueba.cantidad++,
+        'precio': arrayObjetosImg[i].getPrecio(),
+        'ruta': arrayObjetosImg[i].getRuta()
+      };
+      localStorage.setItem(prueba.nombre, JSON.stringify(objeto2));
+      console.log(prueba.cantidad);
+    } else {
+      localStorage.setItem(arrayObjetosImg[i].getNombre(), JSON.stringify(objeto));
+    }
   });
 }
